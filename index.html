@@ -1,10 +1,32 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<!doctype html>
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-    <title>Hello Tera</title>
+    <title>Lunch Checker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <script src="angular.min.js" charset="utf-8"></script>
+    <script src="app.js" charset="utf-8"></script>
+    <style>
+      .message { font-size: 1.3em; font-weight: bold; }
+    </style>
   </head>
-  <body>
-    <<h1>How are you cool</h1>
-  </body>
+<body style="text-align:center; background-color:#333;" ng-app="lunchApp">
+   <div ng-controller="LunchCheckController" class="container">
+     <h1>Lunch Checker</h1>
+
+         <div class="form-group">
+             <input style="border: 3px solid {{textColor}};" id="lunch-menu" type="text"
+             placeholder="list comma separated dishes you usually have for lunch"
+             class="form-control" ng-model="foods">
+         </div>
+         <div class="form-group">
+             <button class="btn btn-warning" ng-click=showMessage();>Check If Too Much</button>
+         </div>
+         <div class="form-group message" style="color:{{textColor}};font-size:5rem;">
+          {{foodStatus}}
+           <!-- Your message can go here. -->
+         </div>
+   </div>
+
+</body>
 </html>
